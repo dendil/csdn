@@ -1,5 +1,6 @@
 # 目录
 [TOC]
+
 ##1. 前言
 公司开发需要对接黄金交易所的新黄金行情系统，java对接C,引用到了 jna，报出如下错误
 
@@ -24,6 +25,7 @@ at com.sun.jna.Library$Handler.<init>(Library.java:147)
 at com.sun.jna.Native.loadLibrary(Native.java:412)
 at com.sun.jna.Native.loadLibrary(Native.java:391)
 ```
+
 ## 2. 思路
 各种百度 google 所有方法都试了，错误还是没法解决。
 项目源码 如下图 dll 动态执行库
@@ -31,7 +33,8 @@ java.lang.UnsatisfiedLinkError出现这种错误的原因是一般是java虚拟�
 遂思路转向 gtp.dll  的依赖 参考[github  tess4j  issues](https://github.com/nguyenq/tess4j/issues/95)发现神器       [Dependency Walker](http://www.dependencywalker.com/)
 
 ![images1][images1]
-[images1]: images/csdn_20180813154138.png
+
+
 
 ## 3. 神器 Dependency Walker
 
@@ -43,6 +46,7 @@ Dependency Walker 是 Microsoft Visual C++ 中提供的非常有用的 PE 模块
 	动态剖析 PE 模块的模块依赖性。 
 	解析 C++ 函数名称。
 Dependency Walker [使用说明](http://www.dependencywalker.com/help/html/contents.htm)http://www.dependencywalker.com/help/html/contents.htm
+
 ![images2][images2]
 
 
@@ -65,14 +69,22 @@ Dependency Walker [使用说明](http://www.dependencywalker.com/help/html/conte
 ![images6][images6]
 
 ### 4.1 下载UCRTBASED.DLL
+
 参考[如何解决vs2015运行缺少ucrtbased.dll的问题](https://jingyan.baidu.com/article/1e5468f96a8048484861b711.html)下载UCRTBASED.DLL
 https://jingyan.baidu.com/article/1e5468f96a8048484861b711.html
+
 #### 4.1.1 搜索UCRTBASED.DLL
+
 ![images7][images7]
+
 #### 4.1.2 下载保存UCRTBASED.DLL
+
 ![images8][images8]
+
 ![images9][images9]
+
 #### 4.1.3 解压到指定目录
+
 ![images10][images10]
 
 - 1、**Windows 95/98/Me系统**，将ucrtbased.dll复制到C:\Windows\System目录下。
