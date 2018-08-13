@@ -31,11 +31,12 @@ java.lang.UnsatisfiedLinkError出现这种错误的原因是一般是java虚拟�
 遂思路转向 gtp.dll  的依赖 参考[github  tess4j  issues](https://github.com/nguyenq/tess4j/issues/95)发现神器       [Dependency Walker](http://www.dependencywalker.com/)
 
 ![images1][images1]
-
+[images1]: images/csdn_20180813154138.png
 
 ## 3. 神器 Dependency Walker
 
 Dependency Walker [官方网站](http://www.dependencywalker.com/)  http://www.dependencywalker.com/
+
 Dependency Walker 是 Microsoft Visual C++ 中提供的非常有用的 PE 模块依赖性分析工具。主要功能如下： 
 	查看 PE 模块的导入模块。 
 	查看 PE 模块的导入和导出函数。 
@@ -83,19 +84,20 @@ https://jingyan.baidu.com/article/1e5468f96a8048484861b711.html
 
 ## 安装所有依赖
 参考 第四部[下载 dll文件](https://blog.csdn.net/weixin_38111667/article/details/81630290#4-%E4%B8%8B%E8%BD%BD-dll%E6%96%87%E4%BB%B6) 安装所有依赖
- ![images11][images11]
+![images11][images11]
 
 
 
 结束
+
 [images1]: images/csdn_20180813154138.png
-[images2]:images/csdn_20180813161354.png
-[images3]:images/csdn_20180813171404.png
-[images4]:images/csdn_20180813161916.png
-[images5]:images/csdn_20180813162549.png
-[images6]:images/csdn_20180813162955.png
-[images7]:images/csdn_20180813164154.png
-[images8]:images/csdn_20180813164404.png
-[images9]:images/csdn_20180813164847.png
-[images10]:images/csdn_20180813171110.png
-[images11]:images/csdn_20180813170749.png
+[images2]: images/csdn_20180813161354.png
+[images3]: images/csdn_20180813171404.png
+[images4]: images/csdn_20180813161916.png
+[images5]: images/csdn_20180813162549.png
+[images6]: images/csdn_20180813162955.png
+[images7]: images/csdn_20180813164154.png
+[images8]: images/csdn_20180813164404.png
+[images9]: images/csdn_20180813164847.png
+[images10]: images/csdn_20180813171110.png
+[images11]: images/csdn_20180813170749.png
