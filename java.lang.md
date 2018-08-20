@@ -4,7 +4,7 @@
 ##1. 前言
 公司开发需要对接黄金交易所的新黄金行情系统，java对接C,引用到了 jna，报出如下错误
 
-![a](http://http://img.caojie.top/2017-11-30-docker-logo.png)
+![a](http://img.caojie.top/2017-11-30-docker-logo.png)
 
 java.lang.UnsatisfiedLinkError: The specified module could not be found.
 ``` java
