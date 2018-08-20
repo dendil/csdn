@@ -3,6 +3,7 @@
 
 ##1. 前言
 公司开发需要对接黄金交易所的新黄金行情系统，java对接C,引用到了 jna，报出如下错误
+![a]:(http://http://img.caojie.top/2017-11-30-docker-logo.png)
 
 java.lang.UnsatisfiedLinkError: The specified module could not be found.
 ``` java
@@ -32,7 +33,7 @@ at com.sun.jna.Native.loadLibrary(Native.java:391)
 java.lang.UnsatisfiedLinkError出现这种错误的原因是一般是java虚拟机找不到声明为native方法的本地语言定义时，出现的错误。在我的理解过程中我一般都认为是由于导入dll或者导入lib文件不正确导致的.
 遂思路转向 gtp.dll  的依赖 参考[github  tess4j  issues](https://github.com/nguyenq/tess4j/issues/95)发现神器       [Dependency Walker](http://www.dependencywalker.com/)
 
-![images1][images1]
+![images1][1]
 
 
 
@@ -47,26 +48,26 @@ Dependency Walker 是 Microsoft Visual C++ 中提供的非常有用的 PE 模块
 	解析 C++ 函数名称。
 Dependency Walker [使用说明](http://www.dependencywalker.com/help/html/contents.htm)http://www.dependencywalker.com/help/html/contents.htm
 
-![images2][images2]
+![images2][2]
 
 
 
 
 下载好了之后  
-![images3][images3]
+![images3][3]
 
 -------------------
 打开 depends.exe
 
 左上角  file --》 open   --》 选择 调用的 dll 文件
-![images4][images4]
+![images4][4]
 
 
 果不其然发现动态库组件 缺失   黄色叹号
-![images5][images5]
+![images5][5]
 
 ## 4. 下载 dll文件 
-![images6][images6]
+![images6][6]
 
 ### 4.1 下载UCRTBASED.DLL
 
@@ -75,17 +76,17 @@ https://jingyan.baidu.com/article/1e5468f96a8048484861b711.html
 
 #### 4.1.1 搜索UCRTBASED.DLL
 
-![images7][images7]
+![images7][7]
 
 #### 4.1.2 下载保存UCRTBASED.DLL
 
-![images8][images8]
+![images8][8]
 
-![images9][images9]
+![images9][9]
 
 #### 4.1.3 解压到指定目录
 
-![images10][images10]
+![images10][10]
 
 - 1、**Windows 95/98/Me系统**，将ucrtbased.dll复制到C:\Windows\System目录下。
 - 2、**Windows NT/2000系统**，将ucrtbased.dll复制到C:\WINNT\System32目录下。
@@ -96,20 +97,20 @@ https://jingyan.baidu.com/article/1e5468f96a8048484861b711.html
 
 ## 安装所有依赖
 参考 第四部[下载 dll文件](https://blog.csdn.net/weixin_38111667/article/details/81630290#4-%E4%B8%8B%E8%BD%BD-dll%E6%96%87%E4%BB%B6) 安装所有依赖
-![images11][images11]
+![images11][11]
 
 
 
 结束
 
-[images1]: images/csdn_20180813154138.png
-[images2]: images/csdn_20180813161354.png
-[images3]: images/csdn_20180813171404.png
-[images4]: images/csdn_20180813161916.png
-[images5]: images/csdn_20180813162549.png
-[images6]: images/csdn_20180813162955.png
-[images7]: images/csdn_20180813164154.png
-[images8]: images/csdn_20180813164404.png
-[images9]: images/csdn_20180813164847.png
-[images10]: images/csdn_20180813171110.png
-[images11]: images/csdn_20180813170749.png
+[1]: images/csdn_20180813154138.png
+[2]: images/csdn_20180813161354.png
+[3]: images/csdn_20180813171404.png
+[4]: images/csdn_20180813161916.png
+[5]: images/csdn_20180813162549.png
+[6]: images/csdn_20180813162955.png
+[7]: images/csdn_20180813164154.png
+[8]: images/csdn_20180813164404.png
+[9]: images/csdn_20180813164847.png
+[10]: images/csdn_20180813171110.png
+[11]: images/csdn_20180813170749.png
