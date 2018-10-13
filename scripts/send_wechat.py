@@ -79,8 +79,8 @@ while(flag):
       access_token = get_access_token()
     try:
      to_user='@all'
-     message=sys.argv[3]
-#     message='sssssssssssssssssssssssss,,,,,,test,,,,,test'
+#     message=sys.argv[3]
+     message='sssssssssssssssssssssssss,,,,,,test,,,,,test'
      send_message_url='https://qyapi.weixin.qq.com/cgi-bin/message/send?access_token=%s'%access_token
 #     print(send_message_url)
      message_params={
